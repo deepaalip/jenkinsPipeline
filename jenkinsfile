@@ -22,10 +22,16 @@ pipeline {
                 sh 'grep "variables" build/demo-build.txt'
             }
         }
-        stage('Publish') {
+        stage('Deploy') {
             steps {
-                echo '"PUBLISH STAGE"'
-                archiveArtifacts artifacts: 'build/'
+                echo '"DEPLOY STAGE"'
+                
+            }
+        }
+        stage('Release') {
+            steps {
+                echo '"RELEASE STAGE"'
+                
             }
         }
     }
